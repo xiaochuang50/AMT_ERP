@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wulin.dao.DepartmentMapper">
+    <select id="findAllDepartment" resultType="department">
+        select * from department
+    </select>
+    <insert id="insertDepartment" parameterType="department">
+        insert into department (deptName, deptDuty) values(#{deptName},#{deptDuty})
+    </insert>
+    <delete id="deleteDepartment" parameterType="int">
+        delete from department where deptId = #{id}
+    </delete>
+    <update id="updateDepartment" parameterType="department">
+        update department set deptName = #{deptName},deptDuty = #{deptDuty} where deptId = #{deptId}
+    </update>
+</mapper>

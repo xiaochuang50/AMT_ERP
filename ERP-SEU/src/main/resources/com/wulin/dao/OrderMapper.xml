@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wulin.dao.OrderMapper">
+    <select id="findAllOrder" resultType="order">
+        select * from `order`
+    </select>
+    <insert id="addOrder" parameterType="order">
+        insert into `order` (clientName,product,productId,orderNum,price,orderDate) values (#{clientName},#{product},#{productId},#{orderNum},#{price},#{orderDate})
+    </insert>
+    <delete id="deleteOrderById" parameterType="int">
+        delete from `order` where orderId = #{orderId}
+    </delete>
+    <update id="updateOrder" parameterType="order">
+        update `order` set clientName=#{clientName},product=#{product},productId=#{productId},orderNum=#{orderNum},price=#{price},orderDate=#{orderDate} where orderId=#{orderId}
+    </update>
+</mapper>

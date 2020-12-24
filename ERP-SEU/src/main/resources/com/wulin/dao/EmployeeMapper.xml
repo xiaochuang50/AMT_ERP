@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wulin.dao.EmployeeMapper">
+    <select id="findAllEmployee" resultType="employee">
+        SELECT employee.*,department.deptName FROM employee,department WHERE employee.deptId = department.deptId
+    </select>
+    <insert id="insertEmployee" parameterType="employee">
+        insert into employee(empName,gender,phone,empDate,state,deptId) values(#{empName},#{gender},#{phone},#{empDate},#{state},#{deptId})
+    </insert>
+    <update id="updateEmployee" parameterType="employee">
+        update employee set empName=#{empName},gender=#{gender},phone=#{phone},empDate=#{empDate},deptId=#{deptId},state=#{state} where employeeId=#{employeeId}
+    </update>
+    <delete id="deleteEmployee" parameterType="int">
+        delete from employee where employeeId = #{employeeId}
+    </delete>
+</mapper>

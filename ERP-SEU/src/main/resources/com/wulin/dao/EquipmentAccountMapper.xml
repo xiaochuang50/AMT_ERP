@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wulin.dao.EquipmentAccountMapper">
+    <select id="findAllEquipmentAccount" resultType="equipmentAccount">
+        select * from equipment_account
+    </select>
+    <insert id="addEqAccount" parameterType="equipmentAccount">
+        insert into equipment_account (equipmentId,equipmentName,equipmentState,purchaseDate,manufacturer,remark) values (#{equipmentId},#{equipmentName},#{equipmentState},#{purchaseDate},#{manufacturer},#{remark})
+    </insert>
+    <delete id="deleteEqAccountById" parameterType="int">
+        delete from equipment_account where equipmentId=#{equipmentId}
+    </delete>
+    <update id="updateEqAccount" parameterType="equipmentAccount">
+        update equipment_account set equipmentName=#{equipmentName},equipmentState=#{equipmentState},purchaseDate=#{purchaseDate},manufacturer=#{manufacturer},remark=#{remark} where equipmentId=#{equipmentId}
+    </update>
+</mapper>

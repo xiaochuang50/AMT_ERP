@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wulin.dao.MaterialOutMapper">
+    <select id="findAllMaterialOut" resultType="materialOut">
+        SELECT * from material_out
+    </select>
+    <insert id="addMaterialOut" parameterType="materialOut">
+        insert into material_out (materialId,materialName,outNum,outDate,remark) values (#{materialId},#{materialName},#{outNum},#{outDate},#{remark})
+    </insert>
+</mapper>

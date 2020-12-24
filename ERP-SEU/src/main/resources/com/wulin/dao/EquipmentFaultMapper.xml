@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wulin.dao.EquipmentFaultMapper">
+    <select id="findAllEquipmentFault" resultType="equipmentFault">
+        select * from equipment_fault
+    </select>
+    <insert id="addEqFault" parameterType="equipmentFault">
+        insert into equipment_fault (equipmentId,equipmentName,faultDate,faultReason,remark) values (#{equipmentId},#{equipmentName},#{faultDate},#{faultReason},#{remark})
+    </insert>
+<!--    <delete id="deteleClient" parameterType="int">-->
+<!--        delete from client where clientId = #{clientId}-->
+<!--    </delete>-->
+<!--    <update id="updateClient" parameterType="client">-->
+<!--        update client set clientName=#{clientName},address=#{address},phone=#{phone},email=#{email},clientManager=#{clientManager} where clientId=#{clientId}-->
+<!--    </update>-->
+</mapper>

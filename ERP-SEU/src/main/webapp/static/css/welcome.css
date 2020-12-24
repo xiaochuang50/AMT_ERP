@@ -1,0 +1,8 @@
+#welcomePage{
+    width: 100%;
+    height: 560px;
+    background: url("../img/welcome.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
